@@ -14,11 +14,11 @@ addEventHandler("onPlayerConnect", function(playerid, nickname)
 end);
 
 addEventHandler("onPlayerDisconnect", function(playerid, nickname)
-    sendPlayerMessageAll(playerid, nickname .. " has left the server.");
+    sendPlayerMessageAll(nickname .. " has left the server.");
 end);
 
 addEventHandler("onEntityDead", function(playerid, reason, killer)
     if (reason == "kill") then
-        sendPlayerMessageAll(getPlayerName(nickname) .. " was killed by " .. getPlayerName(killer));
+        sendPlayerMessageAll(getPlayerName(playerid) .. " was killed by " .. getPlayerName(killer));
     end
 end);
