@@ -22,3 +22,11 @@ addEventHandler("onEntityDead", function(playerid, reason, killer)
         sendPlayerMessageAll(getPlayerName(playerid) .. " was killed by " .. getPlayerName(killer));
     end
 end);
+
+addCommandHandler("spawn", function(playerid)
+    setEntityPosition(playerid, -242.3, 42.4, 5.0);
+end);
+
+addCommandHandler("weapons", function(playerid)
+    giveEntityItem(playerid, 55); -- give player granade launcher
+end);
