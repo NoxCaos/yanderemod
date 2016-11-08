@@ -8,7 +8,7 @@ end);
 
 addEventHandler("onPlayerConnect", function(playerid, nickname)
     sendPlayerMessage(playerid, "Hello " + nickname + ", welcome to server!");
-    sendPlayerMessageAll(playerid, nickname .. " has joined the server.");
+    sendPlayerMessageAll(nickname .. " has joined the server.");
 
     setEntityModel(playerid, 42); -- set default model
 end);
@@ -19,6 +19,6 @@ end);
 
 addEventHandler("onEntityDead", function(playerid, reason, killer)
     if (reason == "kill") then
-        sendPlayerMessageAll(playerid, getPlayerName(nickname) .. " was killed by " .. getPlayerName(killer));
+        sendPlayerMessageAll(getPlayerName(nickname) .. " was killed by " .. getPlayerName(killer));
     end
 end);
