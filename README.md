@@ -42,16 +42,26 @@ int         createItem           ( int modelid, bool canBePicked, float x, float
 bool        isItemEntity         ( int entityid );
 ```
 
+### Console/Chat
+```cpp
+void        log                  ( string message );
+void        log                  ( string message, float red, float green, float blue );
+void        logError             ( string message );
+```
+
+
 ## Events
 ```cpp
-void        onServerStarted     ();
-void        onServerStopped     ();
-void        onPlayerConnected   ( int entityid, string nickname );
-void        onPlayerDisconnected( int entityid );
-void        onEntitySpawned     ( int entityid );
-void        onEntityDamaged     ( int entityid, float amount,  int attackerid = null );
-void        onEntityDead        ( int entityid, string reason, int attackerid = null );
-void        onItemPickedUp      ( int entityid, int pickupperid );
+void        onServerStarted       ();
+void        onServerStopped       ();
+void        onPlayerConnected     ( int entityid, string nickname );
+void        onPlayerDisconnected  ( int entityid );
+void        onPlayerEnterLocation ( int entityid, string locationName );
+void        onEntitySpawned       ( int entityid );
+void        onEntityDamaged       ( int entityid, float amount,  int attackerid = null );
+void        onEntityDead          ( int entityid, string reason, int attackerid = null );
+void        onItemPickedUp        ( int entityid, int pickupperid );
+void        onStartLocalPlayer    ();
 
 ```
 
