@@ -9,37 +9,37 @@ bool        addEventHandler      ( string name, function callback );
 bool        addCommandHandler    ( string name, function callback );
 ```
 
-### All enties
+### UI
 ```cpp
-int         getEntityModel       ( int entityid );
-bool        setEntityModel       ( int entityid, int modelid );
-float       getEntityHealth      ( int entityid );
-bool        setEntityHealth      ( int entityid, float amount );
-array       getEntityPosition    ( int entityid );
-bool        setEntityPosition    ( int entityid, float x, float y, float z );
-float       getEntityRotation    ( int entityid );
-bool        setEntityRotation    ( int entityid, float x, float y, float z );
+void        showLoadingScreen   ( bool show );
+```
+
+### Object
+```cpp
+array       getObjectPosition    ( int objectid );
+bool        setObjectPosition    ( int objectid, float x, float y, float z );
+array       getObjectRotation    ( int objectid );
+bool        setObjectRotation    ( int objectid, float x, float y, float z );
 ```
 
 ### Player
 ```cpp
-string      getPlayerName        ( int entityid );
-bool        isPlayerEntity       ( int entityid );
+string      getPlayerName        ( int objectid );
+bool        isPlayerEntity       ( int objectid );
 ```
 
 ### NPC
 ```cpp
-int         createNPC            ( int modelid, float x, float y, float z );
-bool        isNPCEntity          ( int entityid );
-bool        setNPCMoving         ( int entityid, float x, float y, float z, int movetype = ENTITY_WALK );
-bool        setNPCTarget         ( int entityid, int targetid );
-int         getNPCTarget         ( int entityid );
+objectID    spawnNPC             ( int modelid, float x, float y, float z );
+void        setNPCTarget         ( int objectid, int targetid );
+void        setNPCTarget         ( int objectid, int targetid );
+void        setNPCSpeed          ( int objectid, float speed );
+objectID    getNPCTarget         ( int objectid );
 ```
 
 ### Item
 ```cpp
-int         createItem           ( int modelid, bool canBePicked, float x, float y, float z );
-bool        isItemEntity         ( int entityid );
+int         spawnItem            ( string itemID, float x, float y, float z );
 ```
 
 ### Console/Chat
