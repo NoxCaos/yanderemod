@@ -25,12 +25,12 @@ bool        setObjectRotation    ( int objectid, float x, float y, float z );
 ### Player
 ```cpp
 string      getPlayerName        ( int objectid );
-bool        isPlayerEntity       ( int objectid );
 ```
 
 ### NPC
 ```cpp
 objectID    spawnNPC             ( int modelid, float x, float y, float z );
+objectID    spawnRandomNPC       ( string name );
 void        setNPCTarget         ( int objectid, int targetid );
 void        setNPCTarget         ( int objectid, int targetid );
 void        setNPCSpeed          ( int objectid, float speed );
@@ -54,20 +54,22 @@ void        logError             ( string message );
 ```cpp
 void        onServerStarted       ();
 void        onServerStopped       ();
-void        onPlayerConnected     ( int entityid, string nickname );
-void        onPlayerDisconnected  ( int entityid );
-void        onPlayerEnterLocation ( int entityid, string locationName );
-void        onEntitySpawned       ( int entityid );
-void        onEntityDamaged       ( int entityid, float amount,  int attackerid = null );
-void        onEntityDead          ( int entityid, string reason, int attackerid = null );
-void        onItemPickedUp        ( int entityid, int pickupperid );
+void        onServerReady         ();
+void        onPlayerConnected     ( int objectID, string nickname );
+void        onPlayerDisconnected  ( int objectID );
+void        onPlayerEnterLocation ( int objectID, string locationName );
+void        onNPCTargetReached    ( int objectID, string NPCName );
+void        onNPCEnterLocation    ( string locationName, int objectID, string NPCName );
+void        onObjectSpawned       ( int objectID );
+void        onNPCDead             ( int objectID, string reason, int attackerid = null );
+void        onItemPickedUp        ( int itemID, int pickupperid );
 void        onStartLocalPlayer    ();
 
 ```
 
 ## Constants
 ```js
-ENTITY_WALK     = 1;
-ENTITY_RUN      = 2;
-ENTITY_SNEAK    = 3;
+Object_WALK     = 1;
+Object_RUN      = 2;
+Object_SNEAK    = 3;
 ```
