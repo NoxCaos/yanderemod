@@ -9,6 +9,17 @@ bool        addEventHandler      ( string name, function callback );
 bool        addCommandHandler    ( string name, function callback );
 ```
 
+### Environment
+```
+void        setSpawnPosition    ( string spawnID );
+spawnID[]   getAllSpawnPoints   ( );
+spawnID     getRandomSpawnPoint ( );
+locID[]     getAllLocations     ( );
+locID       getRandomLocation   ( );
+Vector3     getLocationPostition( );
+Vector3     getLocationRestArea ( );
+```
+
 ### UI
 ```cpp
 void        showLoadingScreen   ( bool show );
@@ -16,6 +27,7 @@ void        showLoadingScreen   ( bool show );
 
 ### Object
 ```cpp
+objectID    spawnObject          ( string name, float x, float y, float z );
 array       getObjectPosition    ( int objectid );
 bool        setObjectPosition    ( int objectid, float x, float y, float z );
 array       getObjectRotation    ( int objectid );
@@ -35,6 +47,7 @@ void        setNPCTarget         ( int objectid, int targetid );
 void        setNPCTarget         ( int objectid, int targetid );
 void        setNPCSpeed          ( int objectid, float speed );
 objectID    getNPCTarget         ( int objectid );
+string[]    getLoadedNPCs        ( );
 ```
 
 ### Item
