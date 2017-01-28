@@ -1,5 +1,7 @@
 # Yanderemod
 
+![discord](https://discordapp.com/api/guilds/274618011217035295/widget.png)
+
 Scripting basic level documentation
 
 ## Functions
